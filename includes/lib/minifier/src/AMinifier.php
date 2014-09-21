@@ -42,6 +42,7 @@ abstract class AMinifier
 
 	/**
 	 * brief description for method ReplaceStringsByConstants
+	 * This function has to be edited together with replaceConstantsByString. Make sure the the delimiter is in switched order!
 	 *
 	 * @param param_type $nameOfParam description
 	 * @return return_type
@@ -69,7 +70,8 @@ abstract class AMinifier
 	
 	/**
 	 * brief description for method replaceConstantsByString
-	 *
+	 * This function has to be edited together with replaceStringsByConstants. Make sure the the delimiter is in switched order!
+	 * 
 	 * @param param_type $nameOfParam description
 	 * @return return_type
 	 * @throws NameOfClass condition
