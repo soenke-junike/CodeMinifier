@@ -18,16 +18,6 @@ abstract class AMinifier
 	 * @return string $code
 	 */
 	abstract protected function trimWhitespaceFromSpecialCharacters($code);
-	
-	/**
-	 * Helperfunction to use this class whitout an instance in the surrounding code. Instance is created on the fly.
-	 * 
-	 * @param string $code
-	 * @return string $code
-	 */
-	public static function minify($code) {
-		return self::getInstance(get_called_class())->getMinifiedCode($code);
-	}
 
 	
 	/**
@@ -153,6 +143,16 @@ abstract class AMinifier
 		$this->tempMatchesForStrings = $tempMatchesForStrings;
 	} // end of member function setTempMatchesForStrings
 	
+	
+	/**
+	 * Helperfunction to use this class whitout an instance in the surrounding code. Instance is created on the fly.
+	 *
+	 * @param string $code
+	 * @return string $code
+	 */
+	public static function minify($code) {
+		return self::getInstance(get_called_class())->getMinifiedCode($code);
+	}
 	
 	/** Name of $instances with getter/setter Instances and of type array
 	 * briefVariableDescription
