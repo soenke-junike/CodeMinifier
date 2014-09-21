@@ -13,7 +13,7 @@ The heart of all minifiers in this project is the function AMinifier::getMinifie
 * remove whitespace before and after special character like (,),{,} and so on. For each type of code you have different special characters.
 * replace back all constants with the corresponding string saved befor
 
-See also: https://github.com/soenke-junike/CodeMinifier/blob/master/doc/Overview.png
+See also: https://github.com/soenke-junike/CodeMinifier/blob/master/doc/Overview.jpeg
 
 ## How to use
 
