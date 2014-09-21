@@ -20,6 +20,17 @@ abstract class AMinifier
 	abstract protected function trimWhitespaceFromSpecialCharacters($code);
 	
 	/**
+	 * Helperfunction to use this class whitout an instance in the surrounding code. Instance is created on the fly.
+	 * 
+	 * @param string $code
+	 * @return string $code
+	 */
+	public static function minify($code) {
+		return self::getInstance(get_called_class())->getMinifiedCode($code);
+	}
+
+	
+	/**
 	 * brief description for method minify
 	 *
 	 * @param param_type $nameOfParam description
@@ -141,4 +152,34 @@ abstract class AMinifier
 	private function setTempMatchesForStrings( array $tempMatchesForStrings ) {
 		$this->tempMatchesForStrings = $tempMatchesForStrings;
 	} // end of member function setTempMatchesForStrings
+	
+	
+	/** Name of $instances with getter/setter Instances and of type array
+	 * briefVariableDescription
+	 * detailed description (Typsicherheit und Wertebereich durch Getter/Setter herstellen?)
+	 *
+	 * @var array
+	 */
+	private static $instances;
+	
+	/**
+	 * Auto-generated getter for variable $instances
+	 *
+	 * @return array
+	 */
+	private static function getInstance($classname) {
+		if (!isset(self::$instances[$classname])) {
+			self::setInstance($classname);
+		}
+		return self::$instances[$classname];
+	} // end of member function getInstances
+	
+	/**
+	 * Auto-generated setter for variable $instances
+	 *
+	 * @param array $instances briefVariableDescription
+	 */
+	private static function setInstance( $classname ) {
+		self::$instances[$classname] = new $classname();
+	} // end of member function setInstances
 } // end of class AMinifier

@@ -16,5 +16,7 @@ body   ,   div
 }
 EOT;
 
-$cssMinifier = new CSSMinifier();
-echo $cssMinifier->getMinifiedCode($css);
+#$cssMinifier = new CSSMinifier();
+#echo $cssMinifier->getMinifiedCode($css);
+
+echo CSSMinifier::minify($css);
