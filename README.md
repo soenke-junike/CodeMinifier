@@ -17,7 +17,21 @@ See also: https://github.com/soenke-junike/CodeMinifier/blob/master/doc/overview
 
 ## How to use
 
-In your 
+You have to include the file /PATHTOCODEMINIFIER/CodeMinifier.inc.php
+
+After that you can use the minifier in two ways: object style or static style
+
+```
+<?PHP
+reqiuire_once "/PATHTOCODEMINIFIER/CodeMinifier.inc.php";
+
+// object style
+$cssMinifier = new \CodeMinifier\CSSMinifier();
+$minifiedCode = $cssMinifier->getMinifiedCode($code)
+
+// static style
+$minifiedCode = \CodeMinifier\CSSMinifier::minify($code);
+```
 
 
 ## How to extend
