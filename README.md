@@ -3,11 +3,11 @@ CodeMinifier
 
 Extendable PHP classes to minify different types of sourcecode like JavaScript, CSS, PHP, Java, and others.
 
-Reason for another code minifier: I looked around the web and found a lot minifier for different types of code. All of them where quite complicated and most of them not working correctly. I wanted to build a simple to use AND simple to understand AND extendable minifier.
+Reason for another code minifier: I looked around the web and found a lot minifier for different types of code. All of them where quite complicated and most of them not working correctly. I wanted to build a simple to use AND simple to understand AND extendable minifier which can be used for different types of code
 
 ## How it woks
 
-The Heart of all minifiers in this project is the function AMinifier::getMinifiedCode($code). This function will strip the code by proceed the following steps:
+The heart of all minifiers in this project is the function AMinifier::getMinifiedCode($code). This function will strip the code by proceeding the following steps:
 * remove all strings from code and replace them with constants so we can replace constants back later
 * replace comments, linebreaks, douple whitespaces
 * remove whitespace before and after special character like (,),{,} and so on. For each type of code you have different special characters.
@@ -37,7 +37,7 @@ $minifiedCode = \CodeMinifier\CSSMinifier::minify($code);
 
 ## How to extend
 
-If you need a minifier for another code type, just create a class in src-Folder, inherit it from AMinifier and require it in CodeMinifier.inc.php. If the code type uses multiline comments and singleline comments like java - all you have to do is override the trimWhitespaceFromSpecialCharacters function.
+If you need a minifier for another code type, just create a class in src folder, inherit it from AMinifier and require it in CodeMinifier.inc.php. If the code type uses multiline comments and singleline comments like java - all you have to do is override the trimWhitespaceFromSpecialCharacters function. Otherwise you have to override other functions as well.
 
 ## How to Build Documentation?
 
@@ -64,6 +64,7 @@ $ php minifiertest.php
 
 ## Requirements:
 PHP with Namespaces (do not know which Version)
+
 In Static function AMinifier::minify the function get_called_class() will be called. This function appeared in PHP 5.3 the first time.
 
 For building documentation:
