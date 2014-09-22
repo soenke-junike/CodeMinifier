@@ -1,6 +1,6 @@
 <?php
 
-namespace Minifier;
+namespace CodeMinifier;
 
 /**
  * Minifier for Java-Code

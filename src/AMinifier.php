@@ -1,5 +1,5 @@
 <?php
-namespace Minifier;
+namespace CodeMinifier;
 
 /**
  * brief description of class AMinifier
