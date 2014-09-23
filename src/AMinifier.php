@@ -103,8 +103,9 @@ abstract class AMinifier
 	 * @throws NameOfClass condition
 	 */
 	protected function replaceSingleLineComments($code) {
+		$code = preg_replace("@(^|[^\\\])//.*$@m","",$code); //@todo wenn ich richtig sehe unterscheidet sich der CSS-Minifier im Moment nur vom JS-Minifier durch [^\\\]
 		// Erseze alle einzeiligen Kommentare
-		return preg_replace("@(//.*$@m","",$code); //@todo wenn ich richtig sehe unterscheidet sich der CSS-Minifier im Moment nur vom JS-Minifier durch [^\\\]
+		return $code;
 	} // end of member function replaceSingleLineComments_MultiLineComments_LineBreaks_DoubleWhitespace
 
 
